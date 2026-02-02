@@ -1,5 +1,5 @@
 [project]
-name = "SceneSpot AI"
+name = "scenespot-ai"
 version = "0.1.0"
 description = "SceneSpot AI is a video indexing tool that uses AI to create a searchable database of video content."
 readme = "README.md"
