@@ -1,7 +1,7 @@
 [project]
-name = "scenespot-ai"
+name = "ai-media-indexer"
 version = "0.1.0"
-description = "SceneSpot AI is a video indexing tool that uses AI to create a searchable database of video content."
+description = "AI Media Indexer is a video indexing tool that uses AI to create a searchable database of video content."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
