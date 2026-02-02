@@ -8,6 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import google.generativeai as genai
 from groq import Groq
+from smtp_utils import send_mail_with_json
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -92,6 +93,7 @@ async def process_video(file: UploadFile = File(...)):
             f.write(response.text)
         
         print(f"✅ Index saved to: {index_path}")
+        send_mail_with_json(index_path)
         
         return {"status": "success", "filename": clean_name}
 
