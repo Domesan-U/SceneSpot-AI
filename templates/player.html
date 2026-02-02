@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Video Workspace</title>
+    <link rel="stylesheet" href="/static/css/player.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="layout">
+        <main class="video-section">
+            <div class="header">
+                <a href="/" class="back-btn"><i class="fas fa-arrow-left"></i> Upload New</a>
+                <h2>Workspace</h2>
+            </div>
+
+            <div class="video-wrapper">
+                <video id="main-player" controls playsinline>
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="query" placeholder="Ask e.g., 'Where does he jump?'">
+                <button id="ask-btn">Ask AI</button>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-title">History</div>
+            <div id="history-list"></div>
+        </aside>
+    </div>
+    <script src="/static/js/db.js"></script>
+    <script src="/static/js/player.js"></script>
+</body>
+
+</html>
