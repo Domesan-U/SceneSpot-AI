@@ -8,7 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import google.generativeai as genai
 from groq import Groq
-from smtp_utils import send_mail_with_json
+from src.smtp_utils import send_mail_with_json
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -16,7 +16,7 @@ load_dotenv()
 app = FastAPI()
 
 # --- CONFIG ---
-GEMINI_KEY = os.getenv("GEMINI_API_KEY") # Ensure this is loaded from .env or hardcoded
+GEMINI_KEY = "AIzaSyD6RYlbdLwzmKFY6BBw_8d-uvvL9Qh3wqQ" # Ensure this is loaded from .env or hardcoded
 MODEL_NAME = "gemini-2.5-flash"          # Use standard model for best stability
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 INDICES_DIR = "indices"                  # <--- NEW: Folder to store the JSON files
@@ -28,8 +28,8 @@ print(f"Groq Key Loaded: {GROQ_API_KEY[:5]}...") # Security check
 question_model = Groq(api_key=GROQ_API_KEY)
 genai.configure(api_key=GEMINI_KEY)
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="src/static"), name="static")
+templates = Jinja2Templates(directory="src/templates")
 
 # --- ROUTES ---
 @app.get("/", response_class=HTMLResponse)
